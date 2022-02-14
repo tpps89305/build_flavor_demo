@@ -1,16 +1,8 @@
 # build_flavor_demo
 
-A new Flutter project.
+Flutter 執行環境切換機制示範專案。目前支援 Android 和 iOS。
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Flutter 執行環境切換機制，滿足產品開發過程中，需要將開發／測試／正式環境分開的需求。
+以原生程式（Kotlin、Swift）的開發經驗，Android 和 iOS 能分別用 Gradle 和 TARGETS 條件編譯滿足這個需求；在 Flutter 也可以在執行時帶入 --dart-define 和 -flavor 參數去自訂。
