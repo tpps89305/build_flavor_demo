@@ -43,8 +43,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.build_flavor_demo"
-        minSdkVersion flutter.minSdkVersion
-        targetSdkVersion flutter.targetSdkVersion
+        minSdkVersion 21
+        targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -62,17 +62,17 @@ android {
         prod {
             dimension "app"
             resValue "string", "app_name", "Build Flavor"
-            applicationId = "com.example.build_flavor_demo"
+            applicationId = "com.example.buildflavor"
         }
         beta {
             dimension "app"
             resValue "string", "app_name", "Build Flavor Beta"
-            applicationId = "com.example.build_flavor_demo.beta"
+            applicationId = "com.example.buildflavor.beta"
         }
         dev {
             dimension "app"
             resValue "string", "app_name", "Build Flavor Dev"
-            applicationId = "com.example.build_flavor_demo.dev"
+            applicationId = "com.example.buildflavor.dev"
         }
     }
 

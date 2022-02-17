@@ -1,9 +1,12 @@
 import 'package:build_flavor_demo/env_config.dart';
+import 'package:build_flavor_demo/firebase_handler.dart';
 import 'package:flutter/material.dart';
 
 import 'my_home_page.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  FirebaseHandler.initialize();
   runApp(const MyApp());
 }
 

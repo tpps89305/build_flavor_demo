@@ -1,5 +1,5 @@
 name: build_flavor_demo
-description: A new Flutter project.
+description: A build flavor demo app.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -30,6 +30,11 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Firebase SDK
+  firebase_core: ^1.12.0
+  firebase_messaging: ^11.2.6
+  
+  flutter_local_notifications: ^9.3.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
