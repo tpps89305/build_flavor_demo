@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -11,8 +12,17 @@ class FirebaseHandler {
     await Firebase.initializeApp(
         options: FirebaseDefaultConfig.platformOptions);
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+    requestPermission();
     getToken();
 
+    if (Platform.isIOS) {
+      await FirebaseMessaging.instance
+          .setForegroundNotificationPresentationOptions(
+        alert: true,
+        badge: true,
+        sound: true,
+      );
+    }
     // 建立 Android 推播頻道
     AndroidNotificationChannel channel = const AndroidNotificationChannel(
       'in_app_channel', // id
@@ -25,7 +35,7 @@ class FirebaseHandler {
     FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
         FlutterLocalNotificationsPlugin();
 
-    // 使 App 在前景執行時能接收推播
+    // 使 Android App 在前景執行時能接收推播
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       RemoteNotification? notification = message.notification;
       AndroidNotification? android = message.notification?.android;
@@ -53,7 +63,28 @@ class FirebaseHandler {
   }
 
   static getToken() async {
+    if (Platform.isIOS) {
+      String apnstoken = await FirebaseMessaging.instance.getAPNSToken() ?? "";
+      log("APNSToken: $apnstoken", name: "FirebaseHandler");
+    }
     String fcmToken = await FirebaseMessaging.instance.getToken() ?? "";
     log("FCMToken: $fcmToken", name: "FirebaseHandler");
+  }
+
+  static requestPermission() async {
+    if (Platform.isIOS) {
+      NotificationSettings settings =
+          await FirebaseMessaging.instance.requestPermission(
+        alert: true,
+        announcement: false,
+        badge: true,
+        carPlay: false,
+        criticalAlert: false,
+        provisional: false,
+        sound: true,
+      );
+      log('User granted permission: ${settings.authorizationStatus}',
+          name: "FirebaseHandler");
+    }
   }
 }
