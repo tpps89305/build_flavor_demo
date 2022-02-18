@@ -6,21 +6,21 @@ class FirebaseDefaultConfig {
     switch (Env.appEnv) {
       case EnvName.prod:
         return const FirebaseOptions(
-          appId: '1:311657842655:android:178ff7b2b221e5528c666a',
+          appId: '1:311657842655:android:db0a8c5bd1f3ba8c8c666a',
           apiKey: 'AIzaSyCGr2lbIrzyiW8XgLiZLJL-mGyMU-9V0tE',
           projectId: 'pushdemo-c8b80',
           messagingSenderId: '311657842655',
         );
       case EnvName.beta:
         return const FirebaseOptions(
-          appId: '1:311657842655:android:815e686019e0f42c8c666a',
+          appId: '1:311657842655:android:db30b66fd69ecb108c666a',
           apiKey: 'AIzaSyCGr2lbIrzyiW8XgLiZLJL-mGyMU-9V0tE',
           projectId: 'pushdemo-c8b80',
           messagingSenderId: '311657842655',
         );
       case EnvName.dev:
         return const FirebaseOptions(
-          appId: '1:311657842655:android:a8815909333b6aef8c666a',
+          appId: '1:311657842655:android:aa0a4ae66483cfb58c666a',
           apiKey: 'AIzaSyCGr2lbIrzyiW8XgLiZLJL-mGyMU-9V0tE',
           projectId: 'pushdemo-c8b80',
           messagingSenderId: '311657842655',
@@ -28,7 +28,7 @@ class FirebaseDefaultConfig {
       default:
         // Default is prod target
         return const FirebaseOptions(
-          appId: '1:311657842655:android:178ff7b2b221e5528c666a',
+          appId: '1:311657842655:android:db0a8c5bd1f3ba8c8c666a',
           apiKey: 'AIzaSyCGr2lbIrzyiW8XgLiZLJL-mGyMU-9V0tE',
           projectId: 'pushdemo-c8b80',
           messagingSenderId: '311657842655',

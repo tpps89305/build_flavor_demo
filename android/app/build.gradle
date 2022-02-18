@@ -42,7 +42,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.build_flavor_demo"
+        applicationId "com.dispy.buildflavor"
         minSdkVersion 21
         targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()
@@ -62,17 +62,17 @@ android {
         prod {
             dimension "app"
             resValue "string", "app_name", "Build Flavor"
-            applicationId = "com.example.buildflavor"
+            applicationId = "com.dispy.buildflavor"
         }
         beta {
             dimension "app"
             resValue "string", "app_name", "Build Flavor Beta"
-            applicationId = "com.example.buildflavor.beta"
+            applicationId = "com.dispy.buildflavor.beta"
         }
         dev {
             dimension "app"
             resValue "string", "app_name", "Build Flavor Dev"
-            applicationId = "com.example.buildflavor.dev"
+            applicationId = "com.dispy.buildflavor.dev"
         }
     }
 
