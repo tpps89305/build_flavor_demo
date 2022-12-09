@@ -1,0 +1,44 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Build Prod",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define",
+                "DART_DEFINE_APP_ENV=prod",
+                "--flavor",
+                "prod"
+            ]
+        },
+        {
+            "name": "Build Dev",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define",
+                "DART_DEFINE_APP_ENV=dev",
+                "--flavor",
+                "dev"
+            ]
+        },
+        {
+            "name": "Build Beta",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define",
+                "DART_DEFINE_APP_ENV=beta",
+                "--flavor",
+                "beta"
+            ]
+        },
+        {
+            "name": "build_flavor_demo (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        }
+    ]
+}
